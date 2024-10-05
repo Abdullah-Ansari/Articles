@@ -94,6 +94,7 @@
 		504D2EF52CB111D000D63B87 /* ArticlesApp */ = {
 			isa = PBXGroup;
 			children = (
+				504D2F202CB1177900D63B87 /* Services */,
 				504D2EF62CB111D000D63B87 /* ArticlesAppApp.swift */,
 				504D2EF82CB111D000D63B87 /* ContentView.swift */,
 				504D2EFA2CB111D100D63B87 /* Assets.xcassets */,
@@ -125,6 +126,21 @@
 				504D2F132CB111D100D63B87 /* ArticlesAppUITestsLaunchTests.swift */,
 			);
 			path = ArticlesAppUITests;
+			sourceTree = "<group>";
+		};
+		504D2F202CB1177900D63B87 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				504D2F212CB1178200D63B87 /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		504D2F212CB1178200D63B87 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

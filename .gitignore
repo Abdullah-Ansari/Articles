@@ -1,3 +1,6 @@
 .xcodeproj/xcuserdata/.xcuserdatad/UserInterfaceState.xcuserstate
 *.xccheckout
+*.xcuserstate
+*.xcuserdata
+*.xcworkspace
 
