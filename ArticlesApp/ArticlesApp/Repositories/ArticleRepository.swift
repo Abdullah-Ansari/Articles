@@ -15,10 +15,11 @@ protocol ArticleRepositoryProtocol {
 // Article repository implementation
 class ArticleRepository: ArticleRepositoryProtocol {
     private let networkService: NetworkServiceProtocol
-    private let apiKey = "9Mt5qvzmuHZ3HhUaTXGsmOptj6S9u16Q"
+    private let apiKey: String
 
     init(networkService: NetworkServiceProtocol = NetworkService()) {
         self.networkService = networkService
+        apiKey = APIConstants.apiKey
     }
 
     func fetchArticles() async throws -> [Article] {
