@@ -3,4 +3,11 @@
 *.xcuserstate
 *.xcuserdata
 *.xcworkspace
-
+DerivedData/
+.idea/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+# macOS
+.DS_Store
