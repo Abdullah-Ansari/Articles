@@ -11,7 +11,7 @@ struct ArticlesListView: View {
     @StateObject private var viewModel: ArticlesViewModel
 
     init() {
-        _viewModel = StateObject(wrappedValue: ArticlesViewModel(repository: ArticleRepository()))
+        _viewModel = StateObject(wrappedValue: ArticlesViewModel(repository: ArticleRepository(networkService: NetworkService())))
     }
 
     var body: some View {

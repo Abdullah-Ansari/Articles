@@ -17,7 +17,7 @@ class ArticleRepository: ArticleRepositoryProtocol {
     private let networkService: NetworkServiceProtocol
     private let apiKey: String
 
-    init(networkService: NetworkServiceProtocol = NetworkService()) {
+    init(networkService: NetworkServiceProtocol) {
         self.networkService = networkService
         apiKey = APIConstants.apiKey
     }
