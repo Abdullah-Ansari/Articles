@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ArticlesListView: View {
+    
     @StateObject private var viewModel: ArticlesViewModel
 
     init() {
@@ -15,13 +16,13 @@ struct ArticlesListView: View {
     }
 
     var body: some View {
+        
         NavigationStack {
-            List(viewModel.articles, id:\.id) { article in
-                NavigationLink(destination: ArticleDetailView(article: article)) {
-                    ArticleRowView(article: article)
-                }
+            VStack {
+                searchBar()
+                listOfArticles()
             }
-            .navigationTitle("NY Times Most Popular")
+            .navigationTitle("Articles")
             .onAppear {
                 Task {
                     await viewModel.fetchArticles()
@@ -32,31 +33,43 @@ struct ArticlesListView: View {
                     ProgressView("Loading Articles...")
                 }
             }
-//            .alert(item: $viewModel.errorMessage) { message in
-//                Alert(title: Text("Error"), message: Text(message), dismissButton: .default(Text("OK")))
-//            }
         }
     }
-}
-
-struct ArticleRowView: View {
-    let article: Article
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(article.title ?? "")
-                .font(.headline)
-                .padding(.bottom, 2)
-
-            Text(article.abstract ?? "")
-                .font(.subheadline)
-                .foregroundColor(.gray)
-
-            Text(article.publishedDate ?? "")
-                .font(.footnote)
-                .foregroundColor(.gray)
+    
+    @ViewBuilder
+    func searchBar() -> some View {
+        HStack {
+            TextField("Seach the articles..", text: $viewModel.searchText)
+                .onChange(of: viewModel.searchText) { _, newText in
+                    viewModel.filterArticles(by: newText)
+                }
+            Image(systemName: "magnifyingglass.circle")
+                .frame(height: 40)
         }
-        .padding()
+        .padding(.vertical, 10)
+        .padding(.horizontal)
+        .background(Color.gray.opacity(0.3))
+        .cornerRadius(10)
+        .padding(.horizontal)
+       
     }
+    
+    @ViewBuilder
+   func listOfArticles() -> some View {
+       if viewModel.filteredArticles.isEmpty && !viewModel.isLoading {
+           EmptyStateView(
+            imageName: "doc.text.magnifyingglass",
+            title: "No articles found"
+           )
+       } else {
+           List(viewModel.filteredArticles, id: \.id) { article in
+               NavigationLink(
+                destination: ArticleDetailView(article: article)
+               ) {
+                   ArticleRowView(article: article)
+               }
+           }
+           .listStyle(.plain)
+       }
+   }
 }
-

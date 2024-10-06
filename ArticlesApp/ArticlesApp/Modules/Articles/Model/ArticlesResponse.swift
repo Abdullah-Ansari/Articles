@@ -9,7 +9,7 @@ import Foundation
 
 
 // MARK: - ArticleResponse
-public struct ArticlesResponse: Decodable {
+public struct ArticlesResponse: Decodable, Equatable {
     let status, copyright: String?
     let numResults: Int?
     let results: [Article]?
@@ -22,7 +22,7 @@ public struct ArticlesResponse: Decodable {
 }
 
 // MARK: - Result
-public struct Article: Decodable {
+public struct Article: Decodable, Equatable {
     let uri: String?
     let url: String?
     let id, assetID: Int?
@@ -52,7 +52,7 @@ public struct Article: Decodable {
 }
 
 // MARK: - Media
-public struct Media: Decodable {
+public struct Media: Decodable, Equatable {
     let type: MediaType?
     let subtype: Subtype?
     let caption, copyright: String?
@@ -67,7 +67,7 @@ public struct Media: Decodable {
 }
 
 // MARK: - MediaMetadatum
-public struct MediaMetadatum: Decodable {
+public struct MediaMetadatum: Decodable, Equatable {
     let url: String?
     let format: Format?
     let height, width: Int?
@@ -79,15 +79,15 @@ public enum Format: String, Codable {
     case standardThumbnail = "Standard Thumbnail"
 }
 
-public enum Subtype: String, Decodable {
+public enum Subtype: String, Decodable, Equatable {
     case empty = ""
     case photo = "photo"
 }
 
-public enum MediaType: String, Decodable {
+public enum MediaType: String, Decodable, Equatable {
     case image = "image"
 }
 
-public enum Source: String, Decodable {
+public enum Source: String, Decodable, Equatable {
     case newYorkTimes = "New York Times"
 }
