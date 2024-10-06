@@ -12,11 +12,10 @@ struct ArticleRowView: View {
     let article: Article
     
     var body: some View {
-        HStack {
+        HStack(spacing: 10) {
             articleImage
             articleDescription
         }
-        .padding()
     }
     
     private var articleImage: some View {
@@ -51,10 +50,13 @@ struct ArticleRowView: View {
             Text(article.title ?? "")
                 .font(.headline)
                 .padding(.bottom, 2)
+                .lineLimit(2)
 
             Text(article.byline ?? "")
                 .font(.subheadline)
                 .foregroundColor(.gray)
+                .lineLimit(1)
+            
             HStack {
                 Spacer()
                 Text(article.publishedDate ?? "")
