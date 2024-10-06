@@ -37,8 +37,6 @@ class MockURLProtocol: URLProtocol {
 
         client?.urlProtocolDidFinishLoading(self)
     }
-
-    override func stopLoading() {
-        // can cancel the tasks.
-    }
+    
+    override func stopLoading() {}
 }

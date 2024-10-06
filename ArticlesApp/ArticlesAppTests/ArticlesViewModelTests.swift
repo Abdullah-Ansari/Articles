@@ -9,17 +9,17 @@ import XCTest
 @testable import ArticlesApp
 
 final class ArticlesViewModelTests: XCTestCase {
-    var viewModel: ArticlesViewModel!
+    var sut: ArticlesViewModel!
     var mockRepository: MockArticleRepository!
 
     @MainActor override func setUp() {
         super.setUp()
         mockRepository = MockArticleRepository()
-        viewModel = ArticlesViewModel(repository: mockRepository)
+        sut = ArticlesViewModel(repository: mockRepository)
     }
 
     override func tearDown() {
-        viewModel = nil
+        sut = nil
         mockRepository = nil
         super.tearDown()
     }
@@ -30,14 +30,14 @@ final class ArticlesViewModelTests: XCTestCase {
         mockRepository.articlesToReturn = expectedArticles
         
         // Act
-        await viewModel.fetchArticles()
+        await sut.fetchArticles()
         
         // Assert
        await MainActor.run {
-           XCTAssertEqual(viewModel.articles.count, expectedArticles.count)
-           XCTAssertEqual(viewModel.articles[0].title, expectedArticles[0].title)
-           XCTAssertFalse(viewModel.isLoading)
-           XCTAssertNil(viewModel.errorMessage)
+           XCTAssertEqual(sut.articles.count, expectedArticles.count)
+           XCTAssertEqual(sut.articles[0].title, expectedArticles[0].title)
+           XCTAssertFalse(sut.isLoading)
+           XCTAssertNil(sut.errorMessage)
        }
     }
     
@@ -46,26 +46,26 @@ final class ArticlesViewModelTests: XCTestCase {
         mockRepository.shouldReturnError = true
           
         // Act
-        await viewModel.fetchArticles()
+        await sut.fetchArticles()
           
         // Assert
         await MainActor.run {
-            XCTAssertTrue(viewModel.articles.isEmpty)
-            XCTAssertFalse(viewModel.isLoading)
-            XCTAssertEqual(viewModel.errorMessage, "Failed to load articles: Mock error")
+            XCTAssertTrue(sut.articles.isEmpty)
+            XCTAssertFalse(sut.isLoading)
+            XCTAssertEqual(sut.errorMessage, "Failed to load articles: Mock error")
         }
     }
     
     func testFetchArticlesLoadingState() async {
         // Act
-        let fetchTask = Task { await viewModel.fetchArticles() }
+        let fetchTask = Task { await sut.fetchArticles() }
         
         // Yield control to allow any pending updates
         await Task.yield()
         
         // Assert loading state is true before completion
         await MainActor.run {
-            XCTAssertTrue(viewModel.isLoading, "Loading state should be true while fetching articles.")
+            XCTAssertTrue(sut.isLoading, "Loading state should be true while fetching articles.")
         }
         
         // Wait for the task to complete
@@ -73,7 +73,7 @@ final class ArticlesViewModelTests: XCTestCase {
         
         // Assert loading state is false after completion
         await MainActor.run {
-            XCTAssertFalse(viewModel.isLoading, "Loading state should be false after fetching articles.")
+            XCTAssertFalse(sut.isLoading, "Loading state should be false after fetching articles.")
         }
     }
 }

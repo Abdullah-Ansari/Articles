@@ -29,11 +29,14 @@ enum BaseURL: String {
 enum Path: String {
 
     case getArticles
+    case invalidURL
 
     var value: String {
         switch self {
         case .getArticles:
             return "/svc/mostpopular/v2/mostviewed/all-sections/7.json"
+        case .invalidURL:
+            return "invalid-url"
         }
     }
 }

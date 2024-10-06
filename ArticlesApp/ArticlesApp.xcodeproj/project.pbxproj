@@ -52,10 +52,10 @@
 		502BF4102CB26ACE00568FAC /* ArticlesViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewModelTests.swift; sourceTree = "<group>"; };
 		502BF4112CB26ACE00568FAC /* ArticleRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleRepositoryTests.swift; sourceTree = "<group>"; };
 		502BF4122CB26ACE00568FAC /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
-		502BF4162CB26AE100568FAC /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIs.swift; path = NetworkService/APIs.swift; sourceTree = "<group>"; };
-		502BF4172CB26AE100568FAC /* EndPointBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndPointBuilder.swift; path = NetworkService/EndPointBuilder.swift; sourceTree = "<group>"; };
-		502BF4182CB26AE100568FAC /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndPoint.swift; path = NetworkService/EndPoint.swift; sourceTree = "<group>"; };
-		502BF4192CB26AE100568FAC /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = NetworkService/NetworkService.swift; sourceTree = "<group>"; };
+		502BF4162CB26AE100568FAC /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
+		502BF4172CB26AE100568FAC /* EndPointBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointBuilder.swift; sourceTree = "<group>"; };
+		502BF4182CB26AE100568FAC /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		502BF4192CB26AE100568FAC /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		502BF4292CB26CA900568FAC /* ArticlesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		502BF42B2CB26CA900568FAC /* ArticlesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesResponse.swift; sourceTree = "<group>"; };
 		502BF42D2CB26CA900568FAC /* ArticlesDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesDetailsView.swift; sourceTree = "<group>"; };
@@ -236,10 +236,6 @@
 		504D2F202CB1177900D63B87 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				502BF4162CB26AE100568FAC /* APIs.swift */,
-				502BF4182CB26AE100568FAC /* EndPoint.swift */,
-				502BF4172CB26AE100568FAC /* EndPointBuilder.swift */,
-				502BF4192CB26AE100568FAC /* NetworkService.swift */,
 				504D2F212CB1178200D63B87 /* NetworkService */,
 			);
 			path = Services;
@@ -248,6 +244,10 @@
 		504D2F212CB1178200D63B87 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				502BF4162CB26AE100568FAC /* APIs.swift */,
+				502BF4182CB26AE100568FAC /* EndPoint.swift */,
+				502BF4172CB26AE100568FAC /* EndPointBuilder.swift */,
+				502BF4192CB26AE100568FAC /* NetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";

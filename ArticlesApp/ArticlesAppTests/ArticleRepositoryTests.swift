@@ -9,17 +9,17 @@ import XCTest
 @testable import ArticlesApp
 
 final class ArticleRepositoryTests: XCTestCase {
-    var repository: ArticleRepository!
+    var sut: ArticleRepository!
     var mockNetworkService: MockNetworkService!
 
     override func setUp() {
         super.setUp()
         mockNetworkService = MockNetworkService()
-        repository = ArticleRepository(networkService: mockNetworkService)
+        sut = ArticleRepository(networkService: mockNetworkService)
     }
 
     override func tearDown() {
-        repository = nil
+        sut = nil
         mockNetworkService = nil
         super.tearDown()
     }
@@ -32,7 +32,7 @@ final class ArticleRepositoryTests: XCTestCase {
         
         // Act
         do {
-            let articles = try await repository.fetchArticles()
+            let articles = try await sut.fetchArticles()
             
             // Assert
             XCTAssertEqual(articles.count, expectedArticles.count)
@@ -49,7 +49,7 @@ final class ArticleRepositoryTests: XCTestCase {
         
         // Act
         do {
-            _ = try await repository.fetchArticles()
+            _ = try await sut.fetchArticles()
             XCTFail("Expected to throw an error but succeeded")
         } catch {
             // Assert that the error is thrown as expected
