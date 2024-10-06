@@ -57,11 +57,22 @@ struct ArticleRowView: View {
                 .foregroundColor(.gray)
                 .lineLimit(1)
             
-            HStack {
-                Spacer()
-                Text(article.publishedDate ?? "")
-                    .font(.footnote)
+           publishDate
+        }
+    }
+    
+    private var publishDate: some View {
+        HStack {
+            Spacer()
+            HStack(spacing: 10) {
+                Image(systemName: "calendar")
                     .foregroundColor(.gray)
+                    .frame(width: 10, height: 10)
+                
+                Text(article.publishedDate ?? "")
+                    .foregroundColor(.primary)
+                    .font(.caption)
+               
             }
         }
     }

@@ -41,6 +41,13 @@ public struct Article: Decodable, Equatable {
         return URL(string: articleImageString)
     }
     
+    var articleURL: URL? {
+        guard
+            let urlString = url, !urlString.isEmpty else { return nil }
+        
+        return URL(string: urlString)
+    }
+    
     enum CodingKeys: String, CodingKey {
         case uri, url, id
         case assetID = "asset_id"

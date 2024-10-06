@@ -19,6 +19,9 @@ class ArticlesViewModel: ObservableObject {
 
     init(repository: ArticleRepositoryProtocol) {
         self.repository = repository
+        Task {
+            await fetchArticles()
+        }
     }
 
     func fetchArticles() async {

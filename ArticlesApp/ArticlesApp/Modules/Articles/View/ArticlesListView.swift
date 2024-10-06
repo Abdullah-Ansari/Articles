@@ -23,11 +23,6 @@ struct ArticlesListView: View {
                 listOfArticles()
             }
             .navigationTitle("Articles")
-            .onAppear {
-                Task {
-                    await viewModel.fetchArticles()
-                }
-            }
             .overlay {
                 if viewModel.isLoading {
                     ProgressView("Loading Articles...")
