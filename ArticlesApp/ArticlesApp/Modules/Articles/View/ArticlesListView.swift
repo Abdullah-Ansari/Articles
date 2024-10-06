@@ -41,6 +41,7 @@ struct ArticlesListView: View {
             Image(systemName: "magnifyingglass.circle")
                 .frame(height: 40)
         }
+        .disabled(viewModel.isLoading)
         .padding(.vertical, 10)
         .padding(.horizontal)
         .background(Color.gray.opacity(0.3))
