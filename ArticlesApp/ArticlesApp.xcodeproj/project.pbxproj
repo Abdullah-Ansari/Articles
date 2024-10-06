@@ -29,6 +29,7 @@
 		504D2F122CB111D100D63B87 /* ArticlesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504D2F112CB111D100D63B87 /* ArticlesAppUITests.swift */; };
 		504D2F142CB111D100D63B87 /* ArticlesAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504D2F132CB111D100D63B87 /* ArticlesAppUITestsLaunchTests.swift */; };
 		508A4A5E2CB26C4A00986C96 /* ArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A4A5C2CB26C4A00986C96 /* ArticleRepository.swift */; };
+		508A4A602CB2A93D00986C96 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A4A5F2CB2A93D00986C96 /* IntegrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		504D2F112CB111D100D63B87 /* ArticlesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesAppUITests.swift; sourceTree = "<group>"; };
 		504D2F132CB111D100D63B87 /* ArticlesAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		508A4A5C2CB26C4A00986C96 /* ArticleRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleRepository.swift; sourceTree = "<group>"; };
+		508A4A5F2CB2A93D00986C96 /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				502BF4102CB26ACE00568FAC /* ArticlesViewModelTests.swift */,
 				502BF4122CB26ACE00568FAC /* NetworkServiceTests.swift */,
 				504D2F072CB111D100D63B87 /* ArticlesAppTests.swift */,
+				508A4A5F2CB2A93D00986C96 /* IntegrationTests.swift */,
 			);
 			path = ArticlesAppTests;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			files = (
 				502BF4142CB26ACE00568FAC /* ArticleRepositoryTests.swift in Sources */,
 				504D2F082CB111D100D63B87 /* ArticlesAppTests.swift in Sources */,
+				508A4A602CB2A93D00986C96 /* IntegrationTests.swift in Sources */,
 				502BF4152CB26ACE00568FAC /* NetworkServiceTests.swift in Sources */,
 				502BF4132CB26ACE00568FAC /* ArticlesViewModelTests.swift in Sources */,
 			);
