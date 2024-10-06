@@ -39,8 +39,6 @@ class MockURLProtocol: URLProtocol {
     }
 
     override func stopLoading() {
-       if let task = MockURLProtocol.currentTask {
-           task.cancel()
-       }
+        // can cancel the tasks.
     }
 }

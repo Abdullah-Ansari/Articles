@@ -17,8 +17,8 @@ class NetworkService: NetworkServiceProtocol {
     
     private var session: URLSession
     
-    init() {
-        self.session = URLSession.shared
+    init(urlSession: URLSession = .shared) {
+        self.session = urlSession
     }
     
     func request<T: Decodable>(
