@@ -14,6 +14,13 @@ protocol NetworkServiceProtocol {
 
 //// API Service implementation
 class NetworkService: NetworkServiceProtocol {
+    
+    private var session: URLSession
+    
+    init() {
+        self.session = URLSession.shared
+    }
+    
     func request<T: Decodable>(
         endPoint: EndPoint
     ) async throws -> T {
@@ -22,7 +29,7 @@ class NetworkService: NetworkServiceProtocol {
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = endPoint.method.rawValue
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        let (data, response) = try await self.session.data(for: urlRequest)
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw URLError(.badServerResponse)
         }
