@@ -33,7 +33,14 @@ public struct Article: Decodable, Equatable {
     let desFacet, orgFacet, perFacet, geoFacet: [String]?
     let media: [Media]?
     let etaID: Int?
-
+    var imageURL: URL? {
+        guard
+            let media = media,
+            let last = media.last?.mediaMetadata?.last,
+                let articleImageString = last.url else { return nil }
+        return URL(string: articleImageString)
+    }
+    
     enum CodingKeys: String, CodingKey {
         case uri, url, id
         case assetID = "asset_id"
