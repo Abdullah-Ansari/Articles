@@ -8,7 +8,7 @@
 import XCTest
 @testable import ArticlesApp
 
-class ArticlesViewModelTests: XCTestCase {
+final class ArticlesViewModelTests: XCTestCase {
     var viewModel: ArticlesViewModel!
     var mockRepository: MockArticleRepository!
 
