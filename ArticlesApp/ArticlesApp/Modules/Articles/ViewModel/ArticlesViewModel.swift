@@ -37,7 +37,9 @@ class ArticlesViewModel: ObservableObject {
         if searchText.isEmpty {
             filteredArticles = articles
         } else {
-            filteredArticles = articles.filter { ($0.title ?? "").contains(searchText) }
+            filteredArticles = articles.filter {
+                ($0.title ?? "").contains(searchText)
+            }
         }
     }
 }

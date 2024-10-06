@@ -62,6 +62,7 @@ struct ArticleDetailView: View {
             adxKeywords: "",
             title: "",
             abstract: "",
+            byline: "",
             desFacet: [],
             orgFacet: [],
             perFacet: [],

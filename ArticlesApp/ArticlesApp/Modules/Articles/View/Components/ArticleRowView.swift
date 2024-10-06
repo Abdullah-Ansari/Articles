@@ -52,13 +52,15 @@ struct ArticleRowView: View {
                 .font(.headline)
                 .padding(.bottom, 2)
 
-            Text(article.abstract ?? "")
+            Text(article.byline ?? "")
                 .font(.subheadline)
                 .foregroundColor(.gray)
-
-            Text(article.publishedDate ?? "")
-                .font(.footnote)
-                .foregroundColor(.gray)
+            HStack {
+                Spacer()
+                Text(article.publishedDate ?? "")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+            }
         }
     }
 }

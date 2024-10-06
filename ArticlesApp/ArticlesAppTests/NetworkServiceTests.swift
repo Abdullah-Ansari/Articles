@@ -31,7 +31,7 @@ class NetworkServiceTests: XCTestCase {
     }
     
     func testRequestSuccess() async throws {
-        // Given
+        
         let mockData = """
         {
             "status": "OK",
@@ -52,6 +52,7 @@ class NetworkServiceTests: XCTestCase {
                     "adx_keywords": "Test;Article",
                     "title": "Test Article",
                     "abstract": "This is a test article abstract.",
+                    "byline": "By Bill Friskics-Warren",
                     "des_facet": ["Test"],
                     "org_facet": ["New York Times"],
                     "per_facet": [],
@@ -73,10 +74,8 @@ class NetworkServiceTests: XCTestCase {
         MockURLProtocol.mockData = mockData
         MockURLProtocol.mockResponse = mockResponse
         
-        // When
         let result: ArticlesResponse = try await sut.request(endPoint: endPoint)
         
-        // Then
         XCTAssertEqual(result.status, "OK")
         XCTAssertEqual(result.numResults, 1)
         XCTAssertEqual(result.results?.first?.title, "Test Article")
@@ -89,7 +88,7 @@ class NetworkServiceTests: XCTestCase {
             .setMethod(.get)
             .setBaseURL(.baseURL)
             .build()
-        // When/Then
+        
         do {
             let _: ArticlesResponse = try await sut.request(endPoint: endPoint)
             XCTFail("Expected to throw an error")
@@ -100,7 +99,7 @@ class NetworkServiceTests: XCTestCase {
     }
     
     func testRequestFailureBadServerResponse() async {
-        // Given
+        
         let endPoint = EndPointBuilder()
             .setPath(.getArticles)
             .setMethod(.get)
@@ -109,8 +108,7 @@ class NetworkServiceTests: XCTestCase {
         let mockResponse = HTTPURLResponse(url: endPoint.url!, statusCode: 404, httpVersion: nil, headerFields: nil)
         MockURLProtocol.mockData = Data()
         MockURLProtocol.mockResponse = mockResponse
-        
-        // When/Then
+    
         do {
             let _: ArticlesResponse = try await sut.request(endPoint: endPoint)
             XCTFail("Expected to throw an error")
@@ -122,7 +120,6 @@ class NetworkServiceTests: XCTestCase {
     
     func testRequestFailureDecodingError() async {
         
-        // Given
         let endPoint = EndPointBuilder()
             .setPath(.getArticles)
             .setMethod(.get)
@@ -133,7 +130,6 @@ class NetworkServiceTests: XCTestCase {
         MockURLProtocol.mockData = invalidJSONData
         MockURLProtocol.mockResponse = mockResponse
        
-        // When/Then
         do {
             let _: ArticlesResponse = try await sut.request(endPoint: endPoint)
             XCTFail("Expected to throw an error")
@@ -142,4 +138,3 @@ class NetworkServiceTests: XCTestCase {
         }
     }
 }
-

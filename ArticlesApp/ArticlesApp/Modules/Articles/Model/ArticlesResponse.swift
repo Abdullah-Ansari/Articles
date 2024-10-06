@@ -29,7 +29,7 @@ public struct Article: Decodable, Equatable {
     let source: Source?
     let publishedDate, updated, section, subsection: String?
     let nytdsection, adxKeywords: String?
-    let title, abstract: String?
+    let title, abstract, byline: String?
     let desFacet, orgFacet, perFacet, geoFacet: [String]?
     let media: [Media]?
     let etaID: Int?
@@ -48,7 +48,7 @@ public struct Article: Decodable, Equatable {
         case publishedDate = "published_date"
         case updated, section, subsection, nytdsection
         case adxKeywords = "adx_keywords"
-        case title, abstract
+        case title, abstract, byline
         case desFacet = "des_facet"
         case orgFacet = "org_facet"
         case perFacet = "per_facet"

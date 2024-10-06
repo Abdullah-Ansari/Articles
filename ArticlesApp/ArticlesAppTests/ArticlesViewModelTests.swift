@@ -82,9 +82,9 @@ extension Article {
    
     static func getArticles() -> [Article] {
         [
-            Article(uri: "test1", url: "http://example1.com", id: 1, assetID: 101, source: .newYorkTimes, publishedDate: "2023-10-04", updated: "2023-10-05", section: "Tech", subsection: "AI", nytdsection: "NYT", adxKeywords: "AI,Tech", title: "Article 1", abstract: "Test Abstract1", desFacet: ["Tech"], orgFacet: ["NYT"], perFacet: ["Author"], geoFacet: ["USA"], media: nil, etaID: 1001),
+            Article(uri: "test1", url: "http://example1.com", id: 1, assetID: 101, source: .newYorkTimes, publishedDate: "2023-10-04", updated: "2023-10-05", section: "Tech", subsection: "AI", nytdsection: "NYT", adxKeywords: "AI,Tech", title: "Article 1", abstract: "Test Abstract1", byline: "By Bill Friskics-Warren", desFacet: ["Tech"], orgFacet: ["NYT"], perFacet: ["Author"], geoFacet: ["USA"], media: nil, etaID: 1001),
             
-            Article(uri: "test2", url: "http://example2.com", id: 1, assetID: 102, source: .newYorkTimes, publishedDate: "2023-10-04", updated: "2023-10-05", section: "Tech", subsection: "AI", nytdsection: "NYT", adxKeywords: "AI,Tech", title: "Article 1", abstract: "Test Abstract2", desFacet: ["Tech"], orgFacet: ["NYT"], perFacet: ["Author"], geoFacet: ["USA"], media: nil, etaID: 1002),
+            Article(uri: "test2", url: "http://example2.com", id: 1, assetID: 102, source: .newYorkTimes, publishedDate: "2023-10-04", updated: "2023-10-05", section: "Tech", subsection: "AI", nytdsection: "NYT", adxKeywords: "AI,Tech", title: "Article 1", abstract: "Test Abstract2", byline: "By Bora Erden, June Kim, Elena Shao and Jeremy White", desFacet: ["Tech"], orgFacet: ["NYT"], perFacet: ["Author"], geoFacet: ["USA"], media: nil, etaID: 1002),
         ]
     }
 }
