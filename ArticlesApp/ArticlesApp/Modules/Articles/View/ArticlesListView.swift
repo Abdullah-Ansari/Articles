@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArticlesListView: View {
+struct ArticlesListScreen: View {
     
     @StateObject private var viewModel: ArticlesViewModel
 
@@ -60,7 +60,7 @@ struct ArticlesListView: View {
        } else {
            List(viewModel.filteredArticles, id: \.id) { article in
                NavigationLink(
-                destination: ArticleDetailView(article: article)
+                destination: ArticleDetailScreen(article: article)
                ) {
                    ArticleRowView(article: article)
                }

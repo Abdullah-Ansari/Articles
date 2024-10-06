@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArticleDetailView: View {
+struct ArticleDetailScreen: View {
     let article: Article
 
     var body: some View {
@@ -93,7 +93,7 @@ struct ArticleDetailView: View {
 }
 
 #Preview {
-    ArticleDetailView(
+    ArticleDetailScreen(
         article: Article(
             uri: "",
             url: "",
