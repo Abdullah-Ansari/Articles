@@ -32,6 +32,7 @@
 		508A4A602CB2A93D00986C96 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A4A5F2CB2A93D00986C96 /* IntegrationTests.swift */; };
 		508A4A642CB2F9FA00986C96 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A4A632CB2F9FA00986C96 /* EmptyStateView.swift */; };
 		508A4A672CB2FADD00986C96 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A4A662CB2FADD00986C96 /* ArticleRowView.swift */; };
+		508A4A6A2CB4480400986C96 /* Articles.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 508A4A692CB4480400986C96 /* Articles.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		508A4A5F2CB2A93D00986C96 /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
 		508A4A632CB2F9FA00986C96 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		508A4A662CB2FADD00986C96 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
+		508A4A692CB4480400986C96 /* Articles.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Articles.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		504D2EF52CB111D000D63B87 /* ArticlesApp */ = {
 			isa = PBXGroup;
 			children = (
+				508A4A682CB447C600986C96 /* Documents */,
 				508A4A612CB2F9D300986C96 /* Helper */,
 				502BF4332CB26CA900568FAC /* Constant */,
 				502BF4262CB26CA900568FAC /* Modules */,
@@ -291,6 +294,14 @@
 				508A4A662CB2FADD00986C96 /* ArticleRowView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		508A4A682CB447C600986C96 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				508A4A692CB4480400986C96 /* Articles.pdf */,
+			);
+			path = Documents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +410,7 @@
 			files = (
 				504D2EFE2CB111D100D63B87 /* Preview Assets.xcassets in Resources */,
 				504D2EFB2CB111D100D63B87 /* Assets.xcassets in Resources */,
+				508A4A6A2CB4480400986C96 /* Articles.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
