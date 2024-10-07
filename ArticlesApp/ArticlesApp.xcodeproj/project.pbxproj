@@ -153,16 +153,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		502BF42F2CB26CA900568FAC /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				502BF4302CB26CA900568FAC /* MockURLProtocol.swift */,
-				502BF4312CB26CA900568FAC /* MockNetworkService.swift */,
-				502BF4322CB26CA900568FAC /* MockArticleRepository.swift */,
-			);
-			path = Mock;
-			sourceTree = "<group>";
-		};
 		502BF4332CB26CA900568FAC /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +200,6 @@
 				504D2F202CB1177900D63B87 /* Services */,
 				504D2EF62CB111D000D63B87 /* ArticlesAppApp.swift */,
 				504D2EFA2CB111D100D63B87 /* Assets.xcassets */,
-				502BF42F2CB26CA900568FAC /* Mock */,
 				504D2EFC2CB111D100D63B87 /* Preview Content */,
 			);
 			path = ArticlesApp;
@@ -227,6 +216,7 @@
 		504D2F062CB111D100D63B87 /* ArticlesAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				508A4A6B2CB449A100986C96 /* Mock */,
 				502BF4112CB26ACE00568FAC /* ArticleRepositoryTests.swift */,
 				502BF4102CB26ACE00568FAC /* ArticlesViewModelTests.swift */,
 				502BF4122CB26ACE00568FAC /* NetworkServiceTests.swift */,
@@ -302,6 +292,16 @@
 				508A4A692CB4480400986C96 /* Articles.pdf */,
 			);
 			path = Documents;
+			sourceTree = "<group>";
+		};
+		508A4A6B2CB449A100986C96 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				502BF4302CB26CA900568FAC /* MockURLProtocol.swift */,
+				502BF4312CB26CA900568FAC /* MockNetworkService.swift */,
+				502BF4322CB26CA900568FAC /* MockArticleRepository.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
