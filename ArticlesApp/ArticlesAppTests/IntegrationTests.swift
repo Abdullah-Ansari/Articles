@@ -45,6 +45,7 @@ final class IntegrationTests: XCTestCase {
         // Assert loading state is false after completion
         await MainActor.run {
             XCTAssertFalse(viewModel.isLoading, "Loading state should be false after fetching articles.")
+            XCTAssertNil(viewModel.errorMessage, "Error message is nil when articles fetched successfully.")
         }
     }
 
