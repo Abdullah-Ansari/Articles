@@ -166,17 +166,17 @@
 		502BF4332CB26CA900568FAC /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				502BF4342CB26CA900568FAC /* API Constant */,
+				502BF4342CB26CA900568FAC /* APIConstant */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
 		};
-		502BF4342CB26CA900568FAC /* API Constant */ = {
+		502BF4342CB26CA900568FAC /* APIConstant */ = {
 			isa = PBXGroup;
 			children = (
 				502BF4352CB26CA900568FAC /* APIConstant.swift */,
 			);
-			path = "API Constant";
+			path = APIConstant;
 			sourceTree = "<group>";
 		};
 		504D2EEA2CB111D000D63B87 = {
