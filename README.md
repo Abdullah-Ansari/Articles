@@ -11,6 +11,11 @@ This project implements an MVVM architecture for fetching and displaying article
     <img src="https://github.com/user-attachments/assets/f6b8a0bc-4ccb-4bd0-a628-a1e187b022d4" height="400" alt="Articles Details Light" style="margin: 0 10px;">
 </div>
 
+## Design Diagram
+[Articles.pdf](https://github.com/user-attachments/files/17274427/Articles.pdf)
+<img width="1657" alt="Screenshot 2024-10-07 at 12 30 36 PM" src="https://github.com/user-attachments/assets/18ff4342-e04f-42e5-bb52-07c5a46aa340">
+
+
 ## Features
 * Fetches articles from the New York Times API.
 * Displays articles in a list format.
